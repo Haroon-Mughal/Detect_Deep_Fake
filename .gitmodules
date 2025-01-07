@@ -1,0 +1,3 @@
+[submodule "DeepfakeBench"]
+	path = DeepfakeBench
+	url = https://github.com/Haroon-Mughal/DeepfakeBench
