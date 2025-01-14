@@ -45,7 +45,7 @@ if st.button("Run Inference"):
             try:
                 st.write("Running inference...")
                 cropped_face, landmarks, masks, cropped_landmarks = preprocessing.preprocess_image(image)  # Custom function
-                st.image(result["croppped_landmarks"], caption="Output Image")
+                st.image(cropped_landmarks, caption="Output Image")
             except Exception as e:
                 st.error(f"Error: {e}")
     else:
