@@ -1,7 +1,7 @@
 import streamlit as st
 import subprocess
-from inference import run_inference
-from preprocess import preprocess_image
+import inference
+import preprocess
 
 
 
@@ -42,7 +42,7 @@ if st.button("Run Inference"):
             # Run inference
             try:
                 st.write("Running inference...")
-                cropped_face, landmarks, masks, cropped_landmarks = preprocess_image(file_path, detector)  # Custom function
+                cropped_face, landmarks, masks, cropped_landmarks = preprocess_image(file_path)  # Custom function
                 st.image(result["croppped_landmarks"], caption="Output Image")
             except Exception as e:
                 st.error(f"Error: {e}")
