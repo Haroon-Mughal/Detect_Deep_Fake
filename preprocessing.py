@@ -144,7 +144,7 @@ def draw_landmarks(image, landmarks):
 def preprocess_image(image):
   #define face detector and predictor models
   face_detector = dlib.get_frontal_face_detector()
-  predictor_path = '/DeepfakeBench/preprocessing/dlib_tools/shape_predictor_81_face_landmarks.dat'
+  predictor_path = './DeepfakeBench/preprocessing/dlib_tools/shape_predictor_81_face_landmarks.dat'
   ## Check if predictor path exists
   if not os.path.exists(predictor_path):
       print(f"Error: Predictor path does not exist: {predictor_path}")   ### logger or console output
