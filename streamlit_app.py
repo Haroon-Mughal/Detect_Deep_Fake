@@ -2,6 +2,7 @@ import streamlit as st
 import subprocess
 import inference
 import preprocessing
+import cv2
 
 
 
@@ -38,11 +39,12 @@ if st.button("Run Inference"):
             file_path = f"uploaded_image.{file_extension}"
             with open(file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
-
+            image = cv2.imread(file_path)
+            
             # Run inference
             try:
                 st.write("Running inference...")
-                cropped_face, landmarks, masks, cropped_landmarks = preprocessing.preprocess_image(file_path)  # Custom function
+                cropped_face, landmarks, masks, cropped_landmarks = preprocessing.preprocess_image(image)  # Custom function
                 st.image(result["croppped_landmarks"], caption="Output Image")
             except Exception as e:
                 st.error(f"Error: {e}")
