@@ -141,7 +141,7 @@ def draw_landmarks(image, landmarks):
     return annotated_image
 
 
-def preprocess_img(image):
+def preprocess_image(image):
   #define face detector and predictor models
   face_detector = dlib.get_frontal_face_detector()
   predictor_path = '/DeepfakeBench/preprocessing/dlib_tools/shape_predictor_81_face_landmarks.dat'
